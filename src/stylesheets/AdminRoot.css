@@ -1,0 +1,25 @@
+/* Wrapper */
+.main-wrapper {
+  min-height: 100vh;
+  display: flex;
+}
+
+.sidemenu {
+  z-index: 100;
+}
+
+/* Right Container */
+.main-container {
+  width: 100%;
+  /* z-index: 10; */
+}
+
+.main-body {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.d-navbar {
+  height: 10vh;
+}
