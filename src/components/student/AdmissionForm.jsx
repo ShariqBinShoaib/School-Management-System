@@ -9,12 +9,13 @@ class AdmissionForm extends Form {
       parent: "",
       gender: "",
       dob: "",
+      branch: "",
       class: "",
       section: "",
       address: "",
+      country: "",
       city: "",
       state: "",
-      block: "",
       username: "",
       password: ""
     },
@@ -36,6 +37,9 @@ class AdmissionForm extends Form {
     dob: Joi.string()
       .required()
       .label("Date of Birth"),
+    branch: Joi.string()
+      .required()
+      .label("Branch"),
     class: Joi.string()
       .required()
       .label("Class"),
@@ -46,6 +50,9 @@ class AdmissionForm extends Form {
       .min(3)
       .required()
       .label("Address"),
+    country: Joi.string()
+      .required()
+      .label("Country"),
     city: Joi.string()
       .min(3)
       .required()
@@ -54,9 +61,6 @@ class AdmissionForm extends Form {
       .min(3)
       .required()
       .label("State"),
-    block: Joi.string()
-      .required()
-      .label("Block"),
     username: Joi.string()
       .min(3)
       .required()
@@ -105,6 +109,16 @@ class AdmissionForm extends Form {
         id: 3,
         name: "C"
       }
+    ],
+    branch: [
+      {
+        id: 1,
+        name: "Branch 1"
+      },
+      {
+        id: 2,
+        name: "Branch 2"
+      }
     ]
   };
 
@@ -132,19 +146,25 @@ class AdmissionForm extends Form {
             {this.renderInput("dob", "Date of Birth", "col-md-6", "date")}
           </div>
           <div className="form-row">
-            {this.renderSelect("class", "Class", this.data.class, "col-md-6")}
+            {this.renderSelect(
+              "branch",
+              "Branch",
+              this.data.branch,
+              "col-md-4"
+            )}
+            {this.renderSelect("class", "Class", this.data.class, "col-md-4")}
             {this.renderSelect(
               "section",
               "Section",
               this.data.section,
-              "col-md-6"
+              "col-md-4"
             )}
           </div>
           {this.renderInput("address", "Address")}
           <div className="form-row">
-            {this.renderInput("city", "City", "col-md-6")}
-            {this.renderInput("state", "State", "col-md-4")}
-            {this.renderInput("block", "Block", "col-md-2")}
+            {this.renderInput("country", "Country", "col-md-4")}
+            {this.renderInput("city", "City", "col-md-4")}
+            {this.renderInput("state", "State/Province", "col-md-4")}
           </div>
           <div className="form-row">
             {this.renderInput("username", "Username", "col-md-6")}

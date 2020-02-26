@@ -1,19 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function StudentInfo() {
+function ParentInfo() {
   return (
     <div>
-      <h1>Student Info</h1>
+      <h1>Parent Info</h1>
       <Link
-        to="/dashboard/admin/users/student/admit"
+        to="/dashboard/admin/users/parent/admit"
         className="btn btn-primary"
         style={{ marginBottom: 20 }}
       >
-        Add Student
+        Add Parent
       </Link>
     </div>
   );
 }
 
-export default StudentInfo;
+export default ParentInfo;

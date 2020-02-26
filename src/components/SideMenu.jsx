@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
-import SideNav, { NavItem, NavIcon, NavText } from "../react-sidenav";
+import SideNav, { NavItem, NavIcon, NavText } from "../react-sidenav/lib";
 
 class SideMenu extends Component {
   state = {
@@ -29,8 +29,8 @@ class SideMenu extends Component {
               }}
             >
               <SideNav.Toggle />
-              <SideNav.Nav selected={selectedItem || "admin/home"}>
-                <NavItem eventKey="admin/home">
+              <SideNav.Nav selected={selectedItem || "dashboard/admin/home"}>
+                <NavItem eventKey="dashboard/admin/home">
                   <NavIcon>
                     <i
                       className="fa fa-fw fa-home"
@@ -39,19 +39,22 @@ class SideMenu extends Component {
                   </NavIcon>
                   <NavText>Home</NavText>
                 </NavItem>
-                <NavItem eventKey="admin/students">
+                <NavItem eventKey="dashboard/admin/users">
                   <NavIcon>
                     <i
                       className="fa fa-fw fa-user"
                       style={{ fontSize: "1.75em" }}
                     />
                   </NavIcon>
-                  <NavText>Manage Students</NavText>
-                  <NavItem eventKey="admin/students/admit">
-                    <NavText>Admit Student</NavText>
+                  <NavText>Manage Users</NavText>
+                  <NavItem eventKey="dashboard/admin/users/student">
+                    <NavText>Students</NavText>
                   </NavItem>
-                  <NavItem eventKey="admin/students/info">
-                    <NavText>Students Information</NavText>
+                  <NavItem eventKey="dashboard/admin/users/parent">
+                    <NavText>Parents</NavText>
+                  </NavItem>
+                  <NavItem eventKey="dashboard/admin/users/teacher">
+                    <NavText>Teacher</NavText>
                   </NavItem>
                 </NavItem>
               </SideNav.Nav>
